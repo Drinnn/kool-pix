@@ -42,7 +42,7 @@ func (t *Transaction) isValid() error {
 		return errors.New("the amount must be greater than 0")
 	}
 
-	if t.Status != TransactionPending && t.Status != TransactionCompleted && t.Status != TransactionError {
+	if t.Status != TransactionPending && t.Status != TransactionCompleted && t.Status != TransactionError && t.Status != TransactionConfirmed {
 		return errors.New("invalid status for the transaction")
 	}
 
