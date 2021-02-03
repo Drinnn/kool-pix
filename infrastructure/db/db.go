@@ -9,6 +9,8 @@ import (
 	"github.com/Drinnn/kool-pix/domain/model"
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
+	_ "gorm.io/driver/sqlite"
 )
 
 func init() {
