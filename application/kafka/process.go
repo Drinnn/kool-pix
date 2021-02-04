@@ -38,7 +38,7 @@ func (k *KafkaProcessor) Consume() {
 	fmt.Println("kafka consumer has been started")
 	for {
 		msg, err := c.ReadMessage(-1)
-		if err != nil {
+		if err == nil {
 			fmt.Println(string(msg.Value))
 		}
 	}
