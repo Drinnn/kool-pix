@@ -41,3 +41,21 @@ func (t *Transaction) ParseJson(data []byte) error {
 
 	return nil
 }
+
+func (t *Transaction) ToJson() ([]byte, error) {
+	err := t.isValid()
+	if err != nil {
+		return nil, err
+	}
+
+	result, err := json.Marshal(t)
+	if err != nil {
+		return nil, nil
+	}
+
+	return result, nil
+}
+
+func NewTransaction() *Transaction {
+	return &Transaction{}
+}
